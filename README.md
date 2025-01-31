@@ -6,7 +6,8 @@ LLM, despite being impressively knowledgeable, are language processing models an
 
 For example, at the time of writing, ChatGPT won't write a proper Next.js App Router route handler and will stick to an older syntax.
 
-![Incorrect LLM response](./img/badresponse.png)
+![Incorrect LLM response](https://github.com/lbke/copilot-rag/blob/main/img/badresponse.png?raw=true)
+
 
 Read the [RAG definition from IBM](https://research.ibm.com/blog/retrieval-augmented-generation-RAG) for more insights.
 
