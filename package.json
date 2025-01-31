@@ -2,6 +2,10 @@
   "name": "copilot-rag",
   "displayName": "Copilot RAG",
   "description": "Feed GitHub Copilot with documentation from the ",
+  "repository": {
+    "url": "https://github.com/lbke/copilot-rag/"
+  },
+  "publisher": "lbke",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
