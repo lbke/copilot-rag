@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
 import { RagFolderManager, urlToFileName } from "../files";
+import { Readable } from "stream";
+import { simplifyHtml } from "../html";
 const https = require("https");
 const fs = require("fs");
 const path = require("path");
@@ -10,28 +12,37 @@ export function loadUrl(rfm: RagFolderManager) {
     vscode.window
       .showInputBox({ prompt: "Enter the URL to load" })
       .then((url) => {
-        console.log("URL, url");
         if (!url) {
           vscode.window.showErrorMessage("No URL provided");
           return;
         }
-        console.log(`URL entered: ${url}`);
         // Compute clean filepath
         const fileName = urlToFileName(url);
         const filePath = path.join(rfm.folderPath, fileName);
-        const file = fs.createWriteStream();
-        https
-          .get(url, (response: any) => {
-            response.pipe(file);
-            file.on("finish", () => {
-              file.close();
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              vscode.window.showErrorMessage(
+                `Failed to fetch ${url}: ${response.statusText}`
+              );
+              throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+            }
+            return response.text();
+          })
+          .then((data) => {
+            fs.writeFile(filePath, simplifyHtml(data), (err: any) => {
+              if (err) {
+                vscode.window.showErrorMessage(
+                  `Failed to write file: ${err.message}`
+                );
+                throw err;
+              }
               vscode.window.showInformationMessage(
                 `Content downloaded to ${filePath}`
               );
             });
           })
-          .on("error", (err: any) => {
-            fs.unlink(filePath, () => {});
+          .catch((err) => {
             vscode.window.showErrorMessage(
               `Failed to download content: ${err.message}`
             );

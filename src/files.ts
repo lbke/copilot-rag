@@ -5,7 +5,7 @@ import fs from "fs";
 export class RagFolderManager {
   context: vscode.ExtensionContext;
   folderPath: string;
-  constructor(private _context: vscode.ExtensionContext) {
+  constructor(_context: vscode.ExtensionContext) {
     this.context = _context;
     this.folderPath = path.join(
       this.context.globalStorageUri.fsPath,

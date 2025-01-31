@@ -14,11 +14,11 @@ export function activate(context: vscode.ExtensionContext) {
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with registerCommand
   // The commandId parameter must match the command field in package.json
-  const loadUrlCmd = vscode.commands.registerCommand(
-    "copilot-rag.load-url",
+  const webCmd = vscode.commands.registerCommand(
+    "copilot-rag.web",
     loadUrl(rfm)
   );
-  context.subscriptions.push(loadUrlCmd);
+  context.subscriptions.push(webCmd);
 }
 
 // This method is called when your extension is deactivated

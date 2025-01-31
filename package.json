@@ -1,7 +1,7 @@
 {
   "name": "copilot-rag",
-  "displayName": "copilot-rag",
-  "description": "Feed GitHub copilot with documentation from the ",
+  "displayName": "Copilot RAG",
+  "description": "Feed GitHub Copilot with documentation from the ",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "copilot-rag.load-url",
-        "title": "Load URL in copilot context"
+        "command": "copilot-rag.web",
+        "title": "Load a web URL to feed Copilot context"
       }
     ]
   },
