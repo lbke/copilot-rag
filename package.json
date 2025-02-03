@@ -2,6 +2,10 @@
   "name": "copilot-rag",
   "displayName": "Copilot RAG",
   "description": "Feed GitHub Copilot context with online content.",
+  "repository": {
+    "url": "https://github.com/lbke/copilot-rag/"
+  },
+  "publisher": "lbke",
   "icon": "https://github.com/lbke/copilot-rag/blob/main/img/logo.png?raw=true",
   "version": "0.0.1",
   "engines": {
