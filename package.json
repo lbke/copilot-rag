@@ -6,7 +6,7 @@
     "url": "https://github.com/lbke/copilot-rag/"
   },
   "publisher": "lbke",
-  "icon": "https://github.com/lbke/copilot-rag/blob/main/img/logo.png?raw=true",
+  "icon": "./img/logo.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
