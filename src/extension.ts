@@ -7,7 +7,7 @@ import { RagFolderManager } from "./files";
 export function activate(context: vscode.ExtensionContext) {
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "copilot-rag" is now active!');
+  console.log("Copilot Rag is now active.");
 
   const rfm = new RagFolderManager(context);
 

@@ -71,3 +71,8 @@ The debugger allows for testing the extension live.
 ### 0.0.1
 
 Initial release.
+
+### 0.0.2
+
+- Implemented HTML to markdown conversion, inspired by [Cline's approach](https://github.com/cline/cline).
+- Made the loading URL input persistent so users can copy-paste the URL from another place.
