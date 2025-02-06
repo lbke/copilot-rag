@@ -36,8 +36,9 @@ Loading a web page is sadly usually not enough to craft a proper prompt.
 
 This early version doesn't parse text, so don't expect significant improvements for GitHub Copilot suggestions after loading a web page.
 
-Potential improvements on our roadmpa:
+Potential improvements on our roadmap:
 
+- Study the Copilot extension API for a stronger integration: https://code.visualstudio.com/docs/copilot/copilot-extensibility-overview
 - Parse HTML document to exclude irrelevant content
 - Parse Shiki generated HTML that makes code difficult to consume
 - Split content into chunks with Langchain utilities and add a query layer with SQLite to build a relevant context
